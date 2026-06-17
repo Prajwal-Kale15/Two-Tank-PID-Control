@@ -4,6 +4,14 @@
 
 ---
 
+## Demo Videos
+
+| Video 1 | Video 2 | Video 3 |
+|---|---|---|
+| [![Demo 1](https://img.youtube.com/vi/3d1ahmW1kpM/0.jpg)](https://youtu.be/3d1ahmW1kpM) | [![Demo 2](https://img.youtube.com/vi/M7UsVfYNraI/0.jpg)](https://youtu.be/M7UsVfYNraI) | [![Demo 3](https://img.youtube.com/vi/szhlUcdtQvc/0.jpg)](https://youtu.be/szhlUcdtQvc) |
+
+---
+
 ## Overview
 
 This project implements a **real-time closed-loop PID control system** for a two-tank interacting system. The goal is to maintain a constant water level in the tank at a desired setpoint using an ESP8266 NodeMCU microcontroller, an ultrasonic sensor, and a MATLAB-based control loop.
@@ -66,11 +74,23 @@ The two tanks are interconnected, making the system **second-order and interacti
 
 ## How to Run
 
-1. Flash the ESP8266 with the NodeMCU firmware (web server serving `/data` and `/control`)
-2. Connect the hardware (sensor, pumps, relay) as per the circuit diagram
-3. Update `esp_ip` in `Two_Tank_PID_Control.m` with your ESP's IP address
-4. Run `Two_Tank_PID_Control.m` in MATLAB
-5. Monitor real-time graphs and IoT dashboard
+1. Flash the ESP8266 with `ESP8266_TwoTank_WebServer.ino` using Arduino IDE
+2. Update `ssid` and `password` in the `.ino` file with your Wi-Fi credentials
+3. Connect hardware (HC-SR04, pumps, relay) as per circuit
+4. Note the ESP8266 IP from Serial Monitor
+5. Update `esp_ip` in `Two_Tank_PID_Control.m` with that IP
+6. Run `Two_Tank_PID_Control.m` in MATLAB
+7. Monitor real-time graphs and IoT dashboard
+
+---
+
+## Files
+
+| File | Description |
+|---|---|
+| `Two_Tank_PID_Control.m` | MATLAB PID control loop + live visualization |
+| `ESP8266_TwoTank_WebServer.ino` | ESP8266 Arduino web server code |
+| `CT_CPReport_group5.docx` | Full project report |
 
 ---
 
